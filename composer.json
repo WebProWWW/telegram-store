@@ -1,0 +1,17 @@
+{
+    "name": "timur/telegram-store",
+    "description": "Сайт для телеграм",
+    "type": "project",
+    "require": {
+        "yiisoft/yii2": "2.0.14.1",
+        "yiisoft/yii2-swiftmailer": "~2.0.0",
+        "twbs/bootstrap": "^4.0"
+    },
+    "license": "New BSD",
+    "authors": [
+        {
+            "name": "Timur",
+            "email": "v.timur8484@gmail.com"
+        }
+    ]
+}
