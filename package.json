@@ -1,0 +1,27 @@
+{
+  "name": "gulp-for-web",
+  "version": "1.0.0",
+  "description": "gulp for web",
+  "main": "index.js",
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "Timur Valiyev",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-coffee": "^3.0.2",
+    "gulp-header": "^1.8.9",
+    "gulp-include": "^2.3.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-stylus": "^2.7.0"
+  }
+}

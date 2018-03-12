@@ -1,0 +1,52 @@
+mpd(m=0, p=0, d=block)
+  display d
+  margin m
+  padding p
+
+
+resetLn(c=black, hc=black, td=false)
+  color c
+  text-decoration none unless td
+  outline none
+  appearance none
+  border none
+  cursor pointer
+
+  &:active
+  &:focus
+  &:hover
+    text-decoration none unless td
+    outline none
+    color hc
+
+transAll(t)
+  t = (t / 1000s)
+  transition t all ease-in-out
+
+arrowToLeft(w, h, c)
+  height 0
+  width 0
+  border-top (h/2px) solid transparent
+  border-right (w*1px) solid c
+  border-bottom (h/2px) solid transparent
+
+arrowToRight(w, h, c)
+  height 0
+  width 0
+  border-top (h/2px) solid transparent
+  border-left (w*1px) solid c
+  border-bottom (h/2px) solid transparent
+
+arrowToTop(w, h, c)
+  height 0
+  width 0
+  border-left (w/2px) solid transparent
+  border-right (w/2px) solid transparent
+  border-bottom (h*1px) solid c
+
+arrowToBottom(w, h, c)
+  height 0
+  width 0
+  border-left (w/2px) solid transparent
+  border-right (w/2px) solid transparent
+  border-top (h*1px) solid c

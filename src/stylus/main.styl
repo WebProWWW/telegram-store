@@ -1,0 +1,31 @@
+
+@require 'lib/fun'
+
+/*
+ * Media all
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+@require 'media/all'
+
+/*
+ * Small devices (landscape phones, 576px and up)
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+@media (min-width: 576px)
+  @require 'media/sm'
+
+/*
+ * Medium devices (tablets, 768px and up)
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+@media (min-width: 768px)
+  @require 'media/md'
+
+/*
+ * Large devices (desktops, 992px and up)
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+@media (min-width: 992px)
+  @require 'media/lg'
+
+/*
+ * Extra large devices (large desktops, 1200px and up)
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+@media (min-width: 1200px)
+  @require 'media/xl'
