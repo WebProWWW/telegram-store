@@ -30,7 +30,9 @@ watch = {
     './controllers/**/*.php',
     './models/**/*.php',
     './public_html/**/*.php',
-    './views/**/*.php'
+    './views/**/*.php',
+    './widgets/**/*.php',
+    './config/**/*.php'
   ]
 };
 

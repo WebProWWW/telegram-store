@@ -1,8 +1,422 @@
 
 
+colorBlue = darken(#2C96C8, 13%)
+colorLBlue = #37AEE2
+colorGray = #909090
+colorLGray = #f6f6f6
+colorYellow = #ffc155
+
+atime = 160
+
+
+fontRoboto(s=14, w=400)
+  font-family 'Roboto', sans-serif
+  font-weight w
+  font-size (s * 1px)
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// font 300 400 500 700
+
+.test
+  mpd()
+  background red
+  width 100%
+  height 100px
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+:root
+  --font-family-sans-serif 'Roboto', sans-serif
+  --font-family-monospace 'Roboto', sans-serif
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+html
+  height 100%
+
+body
+  // mpd(0, 53px 0 0)
+  mpd()
+  height 100%
+  fontRoboto()
+  line-height 1.3
+
+.page
+
+  &-title
+    mpd(15px 0)
+    font-weight 300
+    font-size 34px
+
+  &-first-item
+    // background red
+    height 53px
+    width 100%
+    flex-shrink 0
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.logo
+  display inline-flex
+  vertical-align middle
+  align-items center
+  font-weight 500
+  font-size 14px
+  outline none
+  resetLn(black, colorLBlue)
+
+  &-img
+    mpd()
+
+  &-text
+    mpd(0 0 0 5px)
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.header
+  background white
+  transAll(atime, box-shadow)
+  // transition box-shadow (atime * 1ms) ease-in-out
+
+  &.onscroll
+    box-shadow 0 0 8px 0 alpha(black, 50%)
+
+  &-container
+    padding 0
+
+.footer
+  mpd(0, 15px 0)
+  background #10232b
+  color white
+  font-weight 300
+
+  &-ln
+    mpd(10px 0)
+    resetLn(#6c797f, white)
+
+  &-nav
+    mpd(0 -15px)
+    // flex-wrap wrap
+    // justify-content space-between
+
+    &-ln
+      mpd(10px 15px)
+      resetLn(white, colorLBlue)
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.inav
+  mpd(0, 0, flex)
+  flex-wrap wrap
+  justify-content space-between
+  margin 0
+  padding 0
+
+  &-icon
+    mpd(5px auto)
+    font-size 45px
+
+  &-label
+    mpd(5px 0)
+    text-align center
+    font-weight 500
+    font-size 16px
+
+  &-count
+    mpd(5px 0)
+    font-weight 400
+    text-align center
+    color colorGray
+
+  &-link
+    mpd(5px 0, 5px)
+    width 50%
+    resetLn()
+    border-radius 5px
+    transAll(atime, background-color)
+
+    &.active, &:hover
+      background colorLBlue
+      color white
+
+      .inav-count
+        color white
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// .breadcrumb-item + .breadcrumb-item::before {
+//   display: inline-block;
+//   padding-right: 0.5rem;
+//   padding-left: 0.5rem;
+//   color: #6c757d;
+//   content: "/";
+// }
+
+.breadcrumb
+  margin 0
+  background colorLGray
+  // → &rarr; &#8594;
+  &-nav
+    background colorLGray
+    .container
+      mpd(0 auto)
+
+  &-item
+    + li
+        mpd(0, 0 2px, inline-block)
+        &:before
+          content '→'
+          color black
+          // content '/'
+          // color colorGray
+    &.active
+      color black
+      + li
+        display none
+    a
+      resetLn(colorBlue, colorBlue)
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.section
+  mpd(0, 15px 0)
+
+  &-title
+    mpd(15px 0)
+    font-weight 300
+    font-size 30px
+
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
+.input
+
+  &-group
+    align-items center;
+
+.form
+
+  &-control
+    padding 3px 8px
+    font-size 14px
+    // max-width 150px
+
+    &:focus
+    &.focus
+      outline none
+      box-shadow none
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+.btn
+  fontRoboto()
+  padding 3px 8px
+  outline none
+  appearance none
+
+  &:focus
+  &.focus
+    outline none
+    box-shadow none
+
+  &-outline
+
+    &-default
+      color colorBlue
+      border-color colorBlue
+      background-color transparent
+      background-image none
+
+      &:hover
+        color white
+        background-color colorBlue
+        border-color colorBlue
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.nav
+  &-link
+    font-weight 500
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.navbar
+
+  &-form
+    width 120px
+
+  &-toggler
+    outline none
+    padding 0 3px
+    border-radius 0
+
+  &-white
+    background white
+
+    .navbar-brand
+      outline none
+      color black
+
+      &:hover
+      &:focus
+        outline none
+        color colorBlue
+
+    .navbar-nav
+
+      .nav-link
+        outline none
+        color black
+
+        &:hover
+        &:focus
+          outline none
+          color colorBlue
+
+        &.disabled
+          color rgba(0, 0, 0, 0.3)
+
+      .show > .nav-link, .active > .nav-link, .nav-link.show, .nav-link.active
+        outline none
+        color colorBlue
+
+    .navbar-toggler
+      border-color black
+      color black
+
+      &-icon
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
+
+    .navbar-text
+      color rgba(0, 0, 0, 0.9)
+
+      a
+        outline none
+        color colorBlue
+
+        &:hover
+        &:focus
+          outline none
+          color colorBlue
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.card
+  height 100%
+
+  &-image
+    mpd(5px auto)
+    max-width 100%
+    height auto
+
+    &.circle
+      border-radius 50%
+
+  &-title
+    mpd()
+    font-size 16px
+    font-weight 400
+
+  &-text
+    mpd(15px 0)
+    font-size 14px
+    font-weight 400
+
+  &-subtitle
+    mpd()
+    font-size 13px
+    font-weight 400
+    color colorGray
+
+  &-body
+    padding 15px
+
+  &-footer
+    padding 10px 15px
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.dropdown
+
+  &-toggle
+    outline none
+    appearance none
+    &:focus
+    &:active
+      outline none
+
+  &-menu
+    // padding 0
+    font-size 14px
+
+  &-divider
+    height 0
+    margin 0
+    overflow hidden
+    border-top 1px solid #e9ecef
+
+  &-item
+    padding 5px 15px
+    font-weight 400
+    // color #212529
+
+    &:hover
+    &:focus
+    &:active
+    &.active
+      color white
+      background-color colorLBlue
+
+// .nav
+
+//   &-link
+//     resetLn()
+
+//   // &-item
+//   //   color black
+
+// // - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// .dropdown
+
+// //   &-menu
+// //     background red
+
+//   &-item
+//     resetLn()
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.star
+  mpd(5px 0)
+  color darken(colorLGray, 13%)
+  font-size 14px
+  cursor default
+  user-select none
+
+  &:hover
+
+    .star-item
+      color colorYellow
+
+  &-item
+    transAll(160)
+
+    &.active
+      color colorYellow
+
+    &:hover
+      transform scale(1.3)
+      color colorYellow
+
+      ~ .star-item
+        color darken(colorLGray, 13%)
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.bg
+  &-gray
+    background colorLGray
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - -

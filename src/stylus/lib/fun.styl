@@ -19,9 +19,9 @@ resetLn(c=black, hc=black, td=false)
     outline none
     color hc
 
-transAll(t)
+transAll(t, type=all)
   t = (t / 1000s)
-  transition t all ease-in-out
+  transition type t ease-in-out
 
 arrowToLeft(w, h, c)
   height 0

@@ -10,10 +10,11 @@ use yii\web\AssetBundle;
 class AppAsset extends AssetBundle
 {
   public $css = [
-    'css/bootstrap-theme.css',
+    'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=cyrillic',
     'css/main.css',
   ];
   public $js = [
+    'js/fontawesome-all.min.js',
     'js/main.js',
   ];
   public $depends = [
