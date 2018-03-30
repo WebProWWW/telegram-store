@@ -12,6 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="content my-auto">
   <section class="section">
     <div class="container">
+      <img class="d-block mx-auto my-3" width="160" height="160" src="/img/search.gif">
       <h1 class="page-title text-center"><?= $this->title ?></h1>
       <div class="row justify-content-center">
         <div class="col-12 col-md-6">
