@@ -25,15 +25,7 @@ opt = {
 watch = {
   coffee: './src/coffee/**/*.coffee',
   stylus: './src/stylus/**/*.styl',
-  php: [
-    './assets/**/*.php',
-    './controllers/**/*.php',
-    './models/**/*.php',
-    './public_html/**/*.php',
-    './views/**/*.php',
-    './widgets/**/*.php',
-    './config/**/*.php'
-  ]
+  php: ['./backend/**/*.php', './config/**/*.php', './fronted/**/*.php', './public_html/**/*.php']
 };
 
 function taskError(err, done) {
