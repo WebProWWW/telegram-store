@@ -13,6 +13,9 @@ use app\fronted\widgets\BestProductsWidget;
 
 ArrayHelper::setValue($this->params, 'category', $category);
 
+
+$this->title = $category->name;
+
 ?>
 <div class="content">
 
