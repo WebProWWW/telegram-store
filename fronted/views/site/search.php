@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
       </div><!--/.row-->
       <?php if ($result): ?>
         <?php foreach ($result->models as $model): ?>
-          <?php $url = Url::to(['catalog/view', 'category'=>$model->category->alias, 'product'=>$model->alias]); ?>
+          <?php $url = Url::to(['catalog/view', 'category'=>$model->category->alias, 'alias'=>$model->alias]); ?>
           <div class="media my-4">
             <a href="<?= $url ?>">
               <img class="mr-3 rounded-circle" width="50" height="50" src="<?= $model->img ?>">
