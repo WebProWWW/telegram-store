@@ -108,7 +108,7 @@ $currentCategory = ArrayHelper::getValue($this, 'params.category', false);
       <div class="col-auto">
         <a class="footer-ln" href="<?= Url::base(true) ?>">telegram-store.ru &copy; 2018</a>
         <a class="footer-ln" href="https://t.me/Timur8484" target="_blank">Создатель @Timur8484</a>
-        <a class="footer-ln" href="https://t.me/Timur8484" target="_blank">Мы в телеграм <i class="fab fa-telegram-plane"></i></a>
+        <a class="footer-ln" href="https://t.me/channelsstore" target="_blank">Мы в телеграм <i class="fab fa-telegram-plane"></i></a>
       </div><!--/.col-->
       <div class="col-auto">
         <nav class="footer-nav">

@@ -72,7 +72,6 @@ class SiteController extends Controller
 
   public function actionView($alias=null)
   {
-    
     $model = Page::findByAlias($alias);
     if (!$model) throw new DevelopmentException;
     return $this->render('view', ['model'=>$model]);
@@ -81,6 +80,11 @@ class SiteController extends Controller
   public function actionDev()
   {
     return $this->render('dev.php');
+  }
+
+  public function actionTest()
+  {
+    return $this->render('test');
   }
 
   // public function actionDownload($alias)

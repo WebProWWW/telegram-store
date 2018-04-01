@@ -17,14 +17,14 @@ $dom = new Dom();
 
 $dom->setOptions([
   'strict' => false,
-  'preserveLineBreaks' => true,
+  'preserveLineBreaks' => false,
   // 'whitespaceTextNode' => false,
   // 'removeScripts' => false,
 ]);
 
 function getNum($str) {
   $cena = str_replace(",",'.',$str);
-  $cena = preg_replace("/[^x\d|*\.]/","",$cena);
+  $cena = preg_replace("/[^\d|*\.]/","",$cena);
   return $cena;
 }
 
@@ -52,54 +52,120 @@ function copyFile($file, $folder, $defaultFile) {
 }
 
 
-//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-// ТЕМЫ
+// https://t.me/okreview
+// OK Ревью
+// Обзоры курсов на разные тематики.
+// Смотрю курсы и пишу на них свои рецензии.
 
-$dom->loadFromUrl('https://ru.telegram-store.com/catalog/product-category/themes/');
-$srcProducts = $dom->find('.product');
 $defaultImage = '/img/product.jpg';
 
-foreach ($srcProducts as $srcProduct) {
-  $link = $srcProduct->find('.woocommerce-LoopProduct-link', 0);
-  $image = $link->find('img', 0);
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// ONE
 
-  $link = getElementVal($link, 'href', false);
-  $image = getElementVal($image, 'src', $defaultImage);
+// $tname = 'okreview';
+// $turl = 'https://t.me/'.$tname;
+// $dom->loadFromUrl($turl);
 
-  if ($link) {
+// $title = $dom->find('.tgme_page_title', 0);
+// $title = trim(getElementVal($title, 'text', ''));
 
-    $dom->loadFromUrl($link);
-    $title = $dom->find('.product_title', 0);
-    $title = trim(getElementVal($title, 'text'));
-    $desc = $dom->find('.description p', 0);
-    $desc = getElementVal($desc, 'text');
-    $imageBig = $dom->find('.zoom', 0);
-    $imageBig = getElementVal($imageBig, 'href', $defaultImage);
-    $url = $dom->find('.wc-button-blue', 0);
-    $url = getElementVal($url, 'hreflink');
+// $image = $dom->find('.tgme_page_photo_image', 0);
+// $image = getElementVal($image, 'src', $defaultImage);
+// if ($image !== $defaultImage) $image = copyFile($image, 'channel', $defaultImage);
 
-    if ($image !== $defaultImage) $image = copyFile($image, '/theme', $defaultImage);
-    if ($imageBig !== $defaultImage) $imageBig = copyFile($imageBig, '/theme', $defaultImage);
+// $image = copyFile($image, 'channel', $defaultImage);
 
-    $model = new Product;
-    $model->category_id = 6;
-    $model->user_id = null;
-    $model->status = 2;
-    $model->alias = Yii::$app->security->generateRandomString(10);
-    $model->type = 'theme';
-    $model->img = $image;
-    $model->name = $title;
-    $model->desc = $desc;
-    $model->url = $url;
+// $desc = $dom->find('.tgme_page_description', 0);
+// $desc = trim(getElementVal($desc, 'innerHtml', ''));
+/*$desc = preg_replace('#<br.*?>#s', ' ', $desc);*/
 
-    if ($model->save(false)) {
-      $stickerModel = new Sticker;
-      $stickerModel->url = $imageBig;
-      $model->link('stickers', $stickerModel);
-      $stickerModel->save(false);
-    }
-  }
-}
+// $members = $dom->find('.tgme_page_extra', 0);
+// $members = getNum($members);
+
+// // echo $title;
+// // echo "<br>";
+// // echo $desc;
+// // echo "<br>";
+// // echo "<img width=\"100\" height=\"100\" src=\"$image\">";
+// // echo "<br>";
+// // echo $members;
+// echo $image;
+
+$productModel = Product::findOne(['id'=>'963']);
+$productModel->img = '/img/upload/channel/'.Yii::$app->security->generateRandomString(10).'.jpg';
+$productModel->save(false);
+// $productModel = new Product;
+
+// $productModel->category_id = 1;
+// $productModel->user_id = null;
+// $productModel->status = 2;
+// $productModel->order = 2;
+// $productModel->best = 1;
+// $productModel->alias = $tname;
+// $productModel->type = 'channel';
+// $productModel->img = $image;
+// $productModel->name = Html::encode($title);
+// $productModel->desc = Html::encode($desc);
+// $productModel->url = $turl;
+// $productModel->members = $members;
+
+// if ($productModel->save(false)) {
+//   $tagsArr = [31, 30, 32];
+//   foreach ($tagsArr as $tagId) {
+//     $tag = Tag::findOne(['id' => $tagId]);
+//     $productModel->link('tags', $tag);
+//   }
+// }
+
+
+// //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// // ТЕМЫ
+
+// $dom->loadFromUrl('https://ru.telegram-store.com/catalog/product-category/themes/');
+// $srcProducts = $dom->find('.product');
+// $defaultImage = '/img/product.jpg';
+
+// foreach ($srcProducts as $srcProduct) {
+//   $link = $srcProduct->find('.woocommerce-LoopProduct-link', 0);
+//   $image = $link->find('img', 0);
+
+//   $link = getElementVal($link, 'href', false);
+//   $image = getElementVal($image, 'src', $defaultImage);
+
+//   if ($link) {
+
+//     $dom->loadFromUrl($link);
+//     $title = $dom->find('.product_title', 0);
+//     $title = trim(getElementVal($title, 'text'));
+//     $desc = $dom->find('.description p', 0);
+//     $desc = getElementVal($desc, 'text');
+//     $imageBig = $dom->find('.zoom', 0);
+//     $imageBig = getElementVal($imageBig, 'href', $defaultImage);
+//     $url = $dom->find('.wc-button-blue', 0);
+//     $url = getElementVal($url, 'hreflink');
+
+//     if ($image !== $defaultImage) $image = copyFile($image, '/theme', $defaultImage);
+//     if ($imageBig !== $defaultImage) $imageBig = copyFile($imageBig, '/theme', $defaultImage);
+
+//     $model = new Product;
+//     $model->category_id = 6;
+//     $model->user_id = null;
+//     $model->status = 2;
+//     $model->alias = Yii::$app->security->generateRandomString(10);
+//     $model->type = 'theme';
+//     $model->img = $image;
+//     $model->name = $title;
+//     $model->desc = $desc;
+//     $model->url = $url;
+
+//     if ($model->save(false)) {
+//       $stickerModel = new Sticker;
+//       $stickerModel->url = $imageBig;
+//       $model->link('stickers', $stickerModel);
+//       $stickerModel->save(false);
+//     }
+//   }
+// }
 
 // $products = Product::find()->where(['type'=>'group'])->all();
 // $defaultImage = '/img/product.jpg';
@@ -651,6 +717,11 @@ foreach ($srcProducts as $srcProduct) {
 
 // https://t.me/ubunntariumbyredroot
 // https://t.me/kubikv3_chat
+// https://t.me/okreview
+// OK Ревью
+// Обзоры курсов на разные тематики.
+
+// Смотрю курсы и пишу на них свои рецензии.
 
 // $tname = 'kubikv3_chat';
 // $turl = 'https://t.me/'.$tname;

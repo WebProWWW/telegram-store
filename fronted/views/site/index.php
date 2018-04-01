@@ -24,13 +24,13 @@ $this->title = $category->name;
       <img class="d-block mx-auto my-3" width="135" height="135" src="/img/logo.svg">
       <h1 class="h2 text-center my-0">Telegram</h1>
       <p class="text-center my-0">Новая эра общения</p>
-      <p class="text-center my-3">
+      <h2 class="slogan d-flex flex-wrap justify-content-center align-items-center my-3">
         <a class="logo" href="<?= Url::to(['site/index']) ?>">
           <img class="logo-img" width="25" height="25" src="/img/logo.svg">
           <span class="logo-text">Telegram Store</span>
         </a>
-        - самый большой каталог телеграмм ботов, стикеров, игр и каналов.
-      </p>
+        <span class="text-center">&nbsp;-&nbsp;самый большой каталог телеграмм ботов, стикеров, игр и каналов.</span>
+      </h2>
     </div><!--/.container-->
   </section><!--/.section-->
 

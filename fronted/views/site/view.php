@@ -9,10 +9,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
 ?>
 <div class="content mb-auto">
-  <section class="section">
-    <div class="container">
-      <h1 class="page-title"><?= $this->title ?></h1>
-      <?= $model->content ?>
-    </div><!--/.container-->
-  </section><!--/.section-->
+  <div class="container">
+    <h1 class="page-title"><?= $this->title ?></h1>
+  </div><!--/.container-->
+  <?= $model->content ?>
 </div><!--/.content-->
