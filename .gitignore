@@ -2,7 +2,7 @@ node_modules
 
 /config
 
-/public_html
+/public_html/*
 !/public_html/css/
 !/public_html/js/
 
