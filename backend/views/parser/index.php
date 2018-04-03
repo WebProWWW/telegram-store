@@ -57,7 +57,7 @@ function copyFile($file, $folder, $defaultFile) {
 // Обзоры курсов на разные тематики.
 // Смотрю курсы и пишу на них свои рецензии.
 
-$defaultImage = '/img/product.jpg';
+// $defaultImage = '/img/product.jpg';
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // ONE
@@ -91,9 +91,9 @@ $defaultImage = '/img/product.jpg';
 // // echo $members;
 // echo $image;
 
-$productModel = Product::findOne(['id'=>'963']);
-$productModel->img = '/img/upload/channel/'.Yii::$app->security->generateRandomString(10).'.jpg';
-$productModel->save(false);
+// $productModel = Product::findOne(['id'=>'963']);
+// $productModel->img = '/img/upload/channel/'.Yii::$app->security->generateRandomString(10).'.jpg';
+// $productModel->save(false);
 // $productModel = new Product;
 
 // $productModel->category_id = 1;

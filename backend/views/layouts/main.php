@@ -39,6 +39,7 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
+            ['label' => 'Парсер Ajax', 'url' => ['/parser/ajax']],
             ['label' => 'Парсер', 'url' => ['/parser/index']],
             ['label' => 'Продукты', 'url' => ['/product/index']],
             ['label' => 'Теги', 'url' => ['/tag/index']],
