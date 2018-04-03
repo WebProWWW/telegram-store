@@ -10,7 +10,7 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=cyrillic',
-        'css/main.css?v=002',
+        'css/main.css?v=003',
     ];
     public $js = [
         'js/fontawesome-all.min.js',
