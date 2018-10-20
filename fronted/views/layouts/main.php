@@ -69,7 +69,6 @@ $currentCategory = ArrayHelper::getValue($this, 'params.category', false);
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <?= MainMenu::widget(['currentCategory'=>$currentCategory]) ?>
-        <a class="btn btn-outline-default my-2 my-md-0 ml-md-2" href="/"><i class="fas fa-sign-in-alt"></i> Войти</a>
       </div><!--/.navbar-collapse-->
     </nav>
   </div><!--/.container-->
